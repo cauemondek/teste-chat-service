@@ -68,14 +68,14 @@ http://localhost:3000/chats/${id do chat}
 
 # Criar um novo Chat - POST
 # Inserir um JSON { "title": "exemplo" }
-http://localhost:3000/users/
+http://localhost:3000/chats/
 
 # Criar um novo Usuário - POST
 # Inserir um JSON { "name": "exemplo" }
 http://localhost:3000/users/
 
 # Adicionar um Usuário a um Chat - POST
-http://localhost:3000/chats/${id da conversa}/users/${id do usuário}
+http://localhost:3000/chats/${id do chat}/users/${id do usuário}
 
 # Editar um Usuário - PUT
 # Inserir um JSON { "name": "exemplo1" }
@@ -100,3 +100,4 @@ http://localhost:3000/users/${id do usuário}
 - Typescript
 - Jest
 - Node.js
+- TypeORM
