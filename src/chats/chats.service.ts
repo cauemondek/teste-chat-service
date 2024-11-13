@@ -84,6 +84,10 @@ export class ChatsService {
     chat.usersCount++;
     user.chatsCount++;
 
+    await this.userRepository.save(user).catch(error => {
+      throw new HttpException(`Error when Save the User: ${error}`, 500);
+    });
+
     const response = await this.chatsRepository.save(chat);
 
     if (!response) {
