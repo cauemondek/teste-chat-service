@@ -73,8 +73,8 @@ export class ChatsService {
   }
 
   async addUserToChat(chatId: number, userId: number): Promise<Chat> {
-    const chat = await this.chatsRepository.findOne({ where: { id: chatId }, relations: ['users'] });
-    const user = await this.userRepository.findOne({ where: { id: userId } });
+    const chat: Chat = await this.chatsRepository.findOne({ where: { id: chatId }, relations: ['users'] });
+    const user: User = await this.userRepository.findOne({ where: { id: userId } });
 
     if (!chat || !user) {
       throw new NotFoundException('Chat or User not found');
